@@ -1,0 +1,276 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 264241152 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3785), pid=28208, tid=17448
+#
+# JRE version:  (25.0.4) (build )
+# Java VM: OpenJDK 64-Bit Server VM (25.0.4+-16339643-b508.27, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Djava.library.path=C:\Users\Summyia Fatima\.android/cli/bundles\9d38f1ca330df28fe5eaf68770495af79e0348bf/lib --enable-native-access=ALL-UNNAMED -Dkotlinx.coroutines.debug=on -Djava.awt.headless=true --sun-misc-unsafe-memory-access=allow -XX:+UseAllWindowsProcessorGroups -Dandroid.cli.dir=C:\Users\Summyia Fatima\.android/cli -Dandroid.cli.exe=C:\Users\Summyia Fatima\.android\bin\android-cli.exe 
+
+Host: 11th Gen Intel(R) Core(TM) i5-1145G7 @ 2.60GHz, 8 cores, 15G,  Windows 11 , 64 bit Build 26100 (10.0.26100.9444)
+Time: Wed Oct  7 07:48:47 2026 Pakistan Standard Time elapsed time: 1.108694 seconds (0d 0h 0m 1s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002127e7f9150):  JavaThread "Unknown thread" [_thread_in_vm, id=17448, stack(0x0000008d16900000,0x0000008d16b00000) (2048K)]
+
+Stack: [0x0000008d16900000,0x0000008d16b00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x7c04b9]  (no source info available)
+V  [jvm.dll+0x78a2ad]  (no source info available)
+V  [jvm.dll+0xa10e4f]  (no source info available)
+V  [jvm.dll+0xa134d4]  (no source info available)
+V  [jvm.dll+0xa13bd3]  (no source info available)
+V  [jvm.dll+0x30aaf6]  (no source info available)
+V  [jvm.dll+0x7bc595]  (no source info available)
+V  [jvm.dll+0x7aefd7]  (no source info available)
+V  [jvm.dll+0x3ff5bb]  (no source info available)
+V  [jvm.dll+0x407776]  (no source info available)
+V  [jvm.dll+0x3f3c26]  (no source info available)
+V  [jvm.dll+0x3f3f08]  (no source info available)
+V  [jvm.dll+0x3c9192]  (no source info available)
+V  [jvm.dll+0x3c9fae]  (no source info available)
+V  [jvm.dll+0x9d5c8f]  (no source info available)
+V  [jvm.dll+0x465b12]  (no source info available)
+V  [jvm.dll+0x9b9a92]  (no source info available)
+V  [jvm.dll+0x50885e]  (no source info available)
+V  [jvm.dll+0x50a0e1]  (no source info available)
+C  [android-cli.exe+0x44d9b]  (no source info available)
+C  [android-cli.exe+0x495ed]  (no source info available)
+C  [android-cli.exe+0x14a20d]  (no source info available)
+C  [KERNEL32.DLL+0x2cd87]  (no source info available)
+C  [ntdll.dll+0xacaec]  (no source info available)
+
+Lock stack of current Java thread (top to bottom):
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ff84d124c08, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x000002127f82b420 WorkerThread "GC Thread#0"                     [id=34704, stack(0x0000008d16b00000,0x0000008d16c00000) (1024K)]
+  0x000002127f843d90 ConcurrentGCThread "G1 Main Marker"            [id=27012, stack(0x0000008d16c00000,0x0000008d16d00000) (1024K)]
+  0x000002127f844930 WorkerThread "G1 Conc#0"                       [id=4172, stack(0x0000008d16d00000,0x0000008d16e00000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff84c79e73a]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ff84d1aab50] Heap_lock - owner thread: 0x000002127e7f9150
+
+Heap address: 0x0000000704e00000, size: 4018 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+UseCompressedClassPointers 1, UseCompactObjectHeaders 0
+Narrow klass pointer bits 32, Max shift 3
+Narrow klass base: 0xffffffffffffffff, Narrow klass shift: -1
+Encoding Range: [0xffffffffffffffff - 0x000000007fffffff), (2147483648 bytes)
+Klass Range:    [0x0000000000000000 - 0x0000000000000000), (0 bytes)
+Klass ID Range:  [4294967295 - 0) (1)
+No protection zone.
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 16 size 48 Howl #buckets 8 coarsen threshold 3686 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 4096
+
+Heap:
+ garbage-first heap   total reserved 4114432K, committed 0K, used 0K [0x0000000704e00000, 0x0000000800000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+
+Heap Regions: E=young(eden), S=young(survivor), O=old, HS=humongous(starts), HC=humongous(continues), CS=collection set, F=free, TAMS=top-at-mark-start, PB=parsable bottom
+
+Card table byte_map: [0x00000212146b0000,0x0000021214e90000] _byte_map_base: 0x0000021210e89000
+
+Marking Bits: (CMBitMap*) 0x000002127f82bbb0
+ Bits: [0x0000021214e90000, 0x0000021218d58000)
+
+GC Heap Usage History (0 events):
+No events
+
+Metaspace Usage History (0 events):
+No events
+
+Dll operation events (2 events):
+Event: 0.500 Attempting to load shared library C:\Users\Summyia Fatima\.android\cli\bundles\9d38f1ca330df28fe5eaf68770495af79e0348bf\jre\bin\java.dll
+Event: 1.103 Loaded shared library C:\Users\Summyia Fatima\.android\cli\bundles\9d38f1ca330df28fe5eaf68770495af79e0348bf\jre\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff79b390000 - 0x00007ff7a093f000 	C:\Users\Summyia Fatima\.android\bin\android-cli.exe
+0x00007ff923040000 - 0x00007ff9232a7000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ff921bf0000 - 0x00007ff921cbb000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ff920460000 - 0x00007ff920862000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ff91cb60000 - 0x00007ff91cbff000 	C:\Windows\SYSTEM32\apphelp.dll
+0x00007ff9222f0000 - 0x00007ff9223c9000 	C:\Windows\System32\oleaut32.dll
+0x00007ff920bf0000 - 0x00007ff920c93000 	C:\Windows\System32\msvcp_win.dll
+0x00007ff920240000 - 0x00007ff92038c000 	C:\Windows\System32\ucrtbase.dll
+0x00007ff921850000 - 0x00007ff921bd5000 	C:\Windows\System32\combase.dll
+0x00007ff921ff0000 - 0x00007ff922108000 	C:\Windows\System32\RPCRT4.dll
+0x00007ff920870000 - 0x00007ff92091c000 	C:\Windows\System32\bcryptprimitives.dll
+0x00007ff91f520000 - 0x00007ff91f554000 	C:\Windows\SYSTEM32\USERENV.dll
+0x00007ff8f7f80000 - 0x00007ff8f7fac000 	C:\Windows\SYSTEM32\VCRUNTIME140.dll
+0x00007ff84c3c0000 - 0x00007ff84d2a1000 	C:\Users\Summyia Fatima\.android\cli\bundles\9d38f1ca330df28fe5eaf68770495af79e0348bf\jre\bin\server\jvm.dll
+0x00007ff922110000 - 0x00007ff9222df000 	C:\Windows\System32\USER32.dll
+0x00007ff9203a0000 - 0x00007ff9203c7000 	C:\Windows\System32\win32u.dll
+0x00007ff922740000 - 0x00007ff92276b000 	C:\Windows\System32\GDI32.dll
+0x00007ff920ac0000 - 0x00007ff920be9000 	C:\Windows\System32\gdi32full.dll
+0x00007ff922810000 - 0x00007ff9228cc000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ff922f50000 - 0x00007ff922ff9000 	C:\Windows\System32\msvcrt.dll
+0x00007ff922670000 - 0x00007ff922719000 	C:\Windows\System32\sechost.dll
+0x00007ff921dc0000 - 0x00007ff921e40000 	C:\Windows\System32\WS2_32.dll
+0x00007ff9200c0000 - 0x00007ff92011e000 	C:\Windows\SYSTEM32\POWRPROF.dll
+0x00007ff919e60000 - 0x00007ff919e6b000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ff914480000 - 0x00007ff9144b6000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ff917830000 - 0x00007ff91783c000 	C:\Users\Summyia Fatima\.android\cli\bundles\9d38f1ca330df28fe5eaf68770495af79e0348bf\jre\bin\VCRUNTIME140_1.dll
+0x00007ff921810000 - 0x00007ff921841000 	C:\Windows\System32\IMM32.DLL
+0x00007ff9200a0000 - 0x00007ff9200b5000 	C:\Windows\SYSTEM32\UMPDC.dll
+0x00007ff917820000 - 0x00007ff91782a000 	C:\Users\Summyia Fatima\.android\cli\bundles\9d38f1ca330df28fe5eaf68770495af79e0348bf\jre\bin\jimage.dll
+0x00007ff91d860000 - 0x00007ff91daac000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ff8fdf00000 - 0x00007ff8fdf3b000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ff9157c0000 - 0x00007ff9157de000 	C:\Users\Summyia Fatima\.android\cli\bundles\9d38f1ca330df28fe5eaf68770495af79e0348bf\jre\bin\java.dll
+0x00007ff920e60000 - 0x00007ff920ffa000 	C:\Windows\System32\ole32.dll
+0x00007ff921070000 - 0x00007ff921808000 	C:\Windows\System32\SHELL32.dll
+0x00007ff91eed0000 - 0x00007ff91eeeb000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+
+JVMTI agents: none
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\Summyia Fatima\.android\bin;C:\Windows\SYSTEM32;C:\Users\Summyia Fatima\.android\cli\bundles\9d38f1ca330df28fe5eaf68770495af79e0348bf\jre\bin\server;C:\Users\Summyia Fatima\.android\cli\bundles\9d38f1ca330df28fe5eaf68770495af79e0348bf\jre\bin
+
+VM Arguments:
+jvm_args: -Djava.library.path=C:\Users\Summyia Fatima\.android/cli/bundles\9d38f1ca330df28fe5eaf68770495af79e0348bf/lib --enable-native-access=ALL-UNNAMED -Dkotlinx.coroutines.debug=on -Djava.awt.headless=true --sun-misc-unsafe-memory-access=allow -XX:+UseAllWindowsProcessorGroups -Dandroid.cli.dir=C:\Users\Summyia Fatima\.android/cli -Dandroid.cli.exe=C:\Users\Summyia Fatima\.android\bin\android-cli.exe 
+java_command: <unknown>
+java_class_path (initial): C:\Users\Summyia Fatima\.android/cli/bundles\9d38f1ca330df28fe5eaf68770495af79e0348bf/main.jar
+Launcher Type: generic
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+   size_t InitialHeapSize                          = 264241152                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MarkStackSizeMax                         = 536870912                                 {product} {ergonomic}
+   size_t MaxHeapSize                              = 4213178368                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5898240                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122945536                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122945536                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251789312                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 4213178368                             {manageable} {ergonomic}
+     bool UseAllWindowsProcessorGroups             = true                                      {product} {command line}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Release file:
+<release file has not been read>
+Environment Variables:
+JAVA_HOME=C:\Program Files\java
+PATH=D:\React Native projects\SheFlow\node_modules\.bin;D:\React Native projects\SheFlow\node_modules\.bin;D:\React Native projects\node_modules\.bin;D:\node_modules\.bin;C:\Users\Summyia Fatima\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\run-script\lib\node-gyp-bin;C:\Program Files\java\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Users\Summyia Fatima\AppData\Local\Microsoft\WindowsApps;C:\ProgramData\Summyia Fatima\GitHubDesktop\bin;C:\Users\Summyia Fatima\AppData\Roaming\npm;C:\Users\Summyia Fatima\AppData\Local\Programs\Microsoft VS Code\bin;C:\FlutterDev\sdk\flutter\bin;C:\Users\Summyia Fatima\AppData\Local\Android\Sdk\platform-tools
+USERNAME=Summyia Fatima
+LANG=en_US.UTF-8
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
+TMP=C:\Users\SUMMYI~1\AppData\Local\Temp
+TEMP=C:\Users\SUMMYI~1\AppData\Local\Temp
+
+
+
+
+Compilation memory statistics disabled.
+
+Periodic native trim disabled
+
+JNI global refs:
+JNI global refs: 0, weak refs: 0
+
+JNI global refs memory usage: 0, weak refs: 0
+
+Process memory usage:
+Resident Set Size: 102640K (0% of 16449756K total physical memory with 550040K free physical memory)
+
+OOME stack traces (most recent first):
+Classloader memory used:
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 26100 (10.0.26100.9444)
+OS uptime: 6 days 13:23 hours
+Hyper-V role detected
+
+CPU: total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 140 stepping 1 microcode 0xbe, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, avx512f, avx512dq, avx512cd, avx512bw, avx512vl, sha, fma, vzeroupper, avx512_vpopcntdq, avx512_vpclmulqdq, avx512_vaes, avx512_vnni, clflush, clflushopt, clwb, avx512_vbmi2, avx512_vbmi, hv, rdtscp, rdpid, fsrm, gfni, avx512_bitalg, f16c, cet_ibt, cet_ss, avx512_ifma
+Processor Information for the first 8 processors :
+  Max Mhz: 2611, Current Mhz: 2611, Mhz Limit: 2611
+
+Memory: 4k page, system-wide physical 16064M (537M free)
+TotalPageFile size 40974M (AvailPageFile size 253M)
+current process WorkingSet (physical memory assigned to process): 100M, peak: 100M
+current process commit charge ("private bytes"): 62M, peak: 314M
+
+vm_info: OpenJDK 64-Bit Server VM (25.0.4+-16339643-b508.27) for windows-amd64 JRE (25.0.4+-16339643-b508.27), built on 2026-09-14T20:44:57Z with MS VC++ 16.10 / 16.11 (VS2019)
+
+END.

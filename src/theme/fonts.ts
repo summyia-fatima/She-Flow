@@ -1,0 +1,35 @@
+export const Fonts = {
+  dmSans: {
+    thin: 'DMSans-Thin',
+    extraLight: 'DMSans-ExtraLight',
+    light: 'DMSans-Light',
+    regular: 'DMSans-Regular',
+    medium: 'DMSans-Medium',
+    semiBold: 'DMSans-SemiBold',
+    bold: 'DMSans-Bold',
+    extraBold: 'DMSans-ExtraBold',
+    black: 'DMSans-Black',
+
+    italic: 'DMSans-Italic',
+    thinItalic: 'DMSans-ThinItalic',
+    extraLightItalic: 'DMSans-ExtraLightItalic',
+    lightItalic: 'DMSans-LightItalic',
+    mediumItalic: 'DMSans-MediumItalic',
+    semiBoldItalic: 'DMSans-SemiBoldItalic',
+    boldItalic: 'DMSans-BoldItalic',
+    extraBoldItalic: 'DMSans-ExtraBoldItalic',
+    blackItalic: 'DMSans-BlackItalic',
+  },
+
+  outfit: {
+    thin: 'Outfit-Thin',
+    extraLight: 'Outfit-ExtraLight',
+    light: 'Outfit-Light',
+    regular: 'Outfit-Regular',
+    medium: 'Outfit-Medium',
+    semiBold: 'Outfit-SemiBold',
+    bold: 'Outfit-Bold',
+    extraBold: 'Outfit-ExtraBold',
+    black: 'Outfit-Black',
+  },
+};
